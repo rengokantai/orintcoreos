@@ -105,3 +105,27 @@ stop instances:
 ```
 systemctl stop helloworld2@{1..4}.service
 ```
+
+######start units with fleet
+```
+fleetctl list-unit-files
+fleetctl list-units
+```
+######etcd and etcdctl
+```
+etcdctl ls /
+etcdctl ls / recursive
+```
+make a key
+```
+edctctl mkdir /my
+etcdctl mk /my/key value
+etcdctl get /my/key
+etcdctl update /my/key newvalue
+etcdctl set /my/key newvalue
+etcdctl rm /my/key
+######troubleshooting
+```
+systemctl status -l fleet
+journalctl -b -u etcd
+```
